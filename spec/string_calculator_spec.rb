@@ -29,5 +29,9 @@ RSpec.describe StringCalculator do
     it "if input string contains delimiter" do
       expect(str_cal_obj.add("//;\n1;2")).to eq(3)
     end
+
+    it "if input string contains delimiter without numbers" do
+      expect(str_cal_obj.add("//;\n;")).to eq(0)
+    end
   end
 end
