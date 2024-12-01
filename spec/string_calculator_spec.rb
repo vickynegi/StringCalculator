@@ -45,5 +45,9 @@ RSpec.describe StringCalculator do
     it "if input string contains bigger number greater than 1000" do
       expect(str_cal_obj.add("3,4,51000,1001,2,1")).to eq(10)
     end
+
+    it "if input string contains delimiters of any length" do
+      expect(str_cal_obj.add("//[***]\n1***2***3")).to eq(6)
+    end
   end
 end
