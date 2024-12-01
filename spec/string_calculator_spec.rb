@@ -33,5 +33,13 @@ RSpec.describe StringCalculator do
     it "if input string contains delimiter without numbers" do
       expect(str_cal_obj.add("//;\n;")).to eq(0)
     end
+
+    it 'if input string contains delimeter with negative numbers' do
+      expect { str_cal_obj.add("//;\n1;-2;-4") }.to raise_error("negatives not allowed -2,-4")
+    end
+
+    it 'if input string contains new line character with negative numbers' do
+      expect{ str_cal_obj.add("1\n2,-3") }.to raise_error("negatives not allowed -3")
+    end
   end
 end
