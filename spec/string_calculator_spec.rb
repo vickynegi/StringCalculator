@@ -21,5 +21,9 @@ RSpec.describe StringCalculator do
     it "if input string contains unknown amount of numbers" do
       expect(str_cal_obj.add((1..600).to_a * ",")).to eq(180300)
     end
+
+    it "if input string contains new line character" do
+      expect(str_cal_obj.add("1\n2,3")).to eq(6)
+    end
   end
 end
