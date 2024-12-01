@@ -49,5 +49,9 @@ RSpec.describe StringCalculator do
     it "if input string contains delimiters of any length" do
       expect(str_cal_obj.add("//[***]\n1***2***3")).to eq(6)
     end
+
+    it "if input string contains multiple delimiters" do
+      expect(str_cal_obj.add("//[*][%]\n1*2%3")).to eq(6)
+    end
   end
 end
