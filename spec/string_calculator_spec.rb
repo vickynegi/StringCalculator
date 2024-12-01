@@ -13,5 +13,9 @@ RSpec.describe StringCalculator do
     it 'if input string contains only 2 numbers' do
       expect(str_cal_obj.add("1,2")).to eq(3)
     end
+
+    it 'if input string contains only 1 number' do
+      expect(str_cal_obj.add("1")).to eq(1)
+    end
   end
 end
