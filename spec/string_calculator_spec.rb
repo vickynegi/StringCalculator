@@ -17,5 +17,9 @@ RSpec.describe StringCalculator do
     it 'if input string contains only 1 number' do
       expect(str_cal_obj.add("1")).to eq(1)
     end
+
+    it "if input string contains unknown amount of numbers" do
+      expect(str_cal_obj.add((1..600).to_a * ",")).to eq(180300)
+    end
   end
 end
