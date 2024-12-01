@@ -39,7 +39,11 @@ RSpec.describe StringCalculator do
     end
 
     it 'if input string contains new line character with negative numbers' do
-      expect{ str_cal_obj.add("1\n2,-3") }.to raise_error("negatives not allowed -3")
+      expect { str_cal_obj.add("1\n2,-3") }.to raise_error("negatives not allowed -3")
+    end
+
+    it "if input string contains bigger number greater than 1000" do
+      expect(str_cal_obj.add("3,4,51000,1001,2,1")).to eq(10)
     end
   end
 end
